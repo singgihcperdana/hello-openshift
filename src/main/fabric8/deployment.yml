@@ -1,0 +1,21 @@
+spec:
+  replicas: 1
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        group: com.samples
+        project: demo
+        provider: fabric8
+    spec:
+      containers:
+      - args:
+         - /usr/local/s2i/run
+        name: demo
+        env:
+          - name: JAVA_APP_JAR
+            value: /deployments/ROOT.war  
