@@ -17,6 +17,6 @@ public class HomeController {
     
     @GetMapping("")
     public String home(){
-        return "hello edit 1";
+        return "hello edit 2";
     }
 }
